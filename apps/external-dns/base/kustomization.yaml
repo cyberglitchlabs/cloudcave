@@ -4,4 +4,4 @@ kind: Kustomization
 generators:
 - helmChart.yaml
 
-namespace: cert-manager
+namespace: external-dns
