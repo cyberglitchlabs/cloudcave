@@ -10,6 +10,7 @@ configMapGenerator:
       usernameSecret:
         key: git_username
         name: autopilot-secret
+    kustomize.buildOptions: --load_restrictor none --enable-helm
   name: argocd-cm
 kind: Kustomization
 namespace: argocd
