@@ -6,5 +6,6 @@ env:
       secretKeyRef:
         name: cloudflare-api-key
         key: apiKey
+logLevel: debug
 rbac:
   create: true
