@@ -1,2 +1,2 @@
-crd:
-  enabled: true
+crds:
+  enabled: false
