@@ -3,6 +3,11 @@ provider:
 
 policy: sync # or upsert-only
 
+sources:
+  - service
+  - ingress
+  - traefik-proxy
+
 env:
   - name: CF_API_TOKEN
     valueFrom:
