@@ -3,6 +3,7 @@ kind: Kustomization
 
 resources:
   - namespace.yaml
+  - pool.yaml
 
 generators:
 - helmChart.yaml
