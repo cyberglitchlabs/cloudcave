@@ -1,0 +1,11 @@
+{
+  "appName": "metallb",
+  "userGivenName": "metallb",
+  "destNamespace": "metallb-system",
+  "destServer": "https://kubernetes.default.svc",
+  "srcPath": "apps/metallb/overlays/infrastructure",
+  "srcRepoURL": "https://github.com/cyberglitchlabs/cloudcave.git",
+  "srcTargetRevision": "",
+  "labels": null,
+  "annotations": null
+}

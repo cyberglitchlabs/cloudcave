@@ -1,0 +1,2 @@
+nodeSelector:
+  feature.node.kubernetes.io/metalLB.capable: 'true'
