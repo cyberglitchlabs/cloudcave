@@ -1,4 +1,7 @@
+kind: Kustomization
 apiVersion: kustomize.config.k8s.io/v1beta1
+namespace: argocd
+
 configMapGenerator:
 - behavior: merge
   literals:
@@ -19,7 +22,7 @@ configMapGenerator:
       clusters:
         - "*"
   name: argocd-cm
-kind: Kustomization
-namespace: argocd
+
 resources:
-- github.com/argoproj-labs/argocd-autopilot/manifests/base?ref=v0.4.18
+  - github.com/argoproj-labs/argocd-autopilot/manifests/base?ref=v0.4.18
+  - ingressRoute.yaml
