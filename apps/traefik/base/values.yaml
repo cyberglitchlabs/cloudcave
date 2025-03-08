@@ -2,8 +2,10 @@ ingressRoute:
   dashboard:
     enabled: true
     # Custom match rule with host domain
-    matchRule: Host(`traefik-dashboard.sievert.fun`)
+    matchRule: Host(`traefik.sievert.fun`)
     entryPoints: ["websecure"]
+    tls:
+      certResolver: letsencrypt
 
 ports:
   web:
