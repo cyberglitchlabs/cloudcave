@@ -1,0 +1,19 @@
+apiVersion: trident.qnap.io/v1
+kind: TridentBackendConfig
+metadata:
+  name: khal-drogo # Required. Name your backend in Kubernetes.
+  namespace: trident
+spec:
+  version: 1
+  storageDriverName: qnap-iscsi
+  backendName: qts # Required. Name your backend in QNAP CSI.
+  credentials:
+    name: backend-qts-secret # Required. Enter the secret name set in metadata.name.
+  debugTraceFlags:
+    method: true
+  storage: # Required. Define one or more virtual pools.
+    - serviceLevel: pool1
+      labels: # Required. Define custom labels for your virtual pool.
+        performance: normal
+      features: # Optional. Define features for your virtual pool.
+        tiering: Enable

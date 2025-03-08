@@ -4,3 +4,4 @@ kind: Kustomization
 resources:
   - crds
   - Trident
+  - stoarge.yaml
