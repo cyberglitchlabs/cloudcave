@@ -4,7 +4,8 @@ metadata:
   name: argocd-server
   namespace: argocd
   annotations:
-    external-dns.alpha.kubernetes.io/hostname: argocd.sievert.fun
+    external-dns.alpha.kubernetes.io/internal-hostname: argocd.sievert.fun
+    external-dns.alpha.kubernetes.io/target: traefik.sievert.fun
     kubernetes.io/ingress.class: traefik
 spec:
   entryPoints:
