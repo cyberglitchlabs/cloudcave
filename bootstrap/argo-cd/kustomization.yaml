@@ -6,6 +6,7 @@ configMapGenerator:
 - behavior: merge
   literals:
   - kustomize.buildOptions="--enable-alpha-plugins --enable-helm"
+  - exec.enabled="true"
   - |
     repository.credentials=- passwordSecret:
         key: git_token
