@@ -7,6 +7,8 @@ ipam:
 k8sServiceHost: localhost
 k8sServicePort: 7445
 kubeProxyReplacement: true
+ingressController:
+    enabled: true
 hubble:
   relay:
     enabled: true
