@@ -7,6 +7,7 @@ spec:
   version: 1
   storageDriverName: qnap-iscsi
   backendName: qts # Required. Name your backend in QNAP CSI.
+  networkInterfaces: [] # Optional. Your adapter name or leave it empty.
   credentials:
     name: backend-qts-secret # Required. Enter the secret name set in metadata.name.
   debugTraceFlags:
