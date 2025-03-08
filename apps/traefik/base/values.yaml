@@ -1,13 +1,17 @@
 ingressRoute:
   dashboard:
-    # -- Create an IngressRoute for the dashboard
     enabled: true
-    entryPoints:
-      - websecure
+    # Custom match rule with host domain
+    matchRule: Host(`traefik-dashboard.sievert.fun`)
+    entryPoints: ["websecure"]
 
 ports:
   web:
-    redirectTo: websecure  # Redirect HTTP to HTTPS
+    redirections:
+      entryPoint:
+        to: websecure
+        scheme: https
+        permanent: true
 
 service:
   enabled: true
