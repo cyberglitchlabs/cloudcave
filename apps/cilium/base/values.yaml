@@ -18,14 +18,14 @@ hubble:
       enabled: true
       annotations:
         cert-manager.io/cluster-issuer: letsencrypt-cloudflare
-        external-dns.alpha.kubernetes.io/internal-hostname: hubble.sievert.com
+        external-dns.alpha.kubernetes.io/internal-hostname: hubble.sievert.fun
       hosts:
-        - hubble.sievert.com
+        - hubble.sievert.fun
       labels: {}
       tls:
         - secretName: hubble-tls
           hosts:
-            - hubble.sievert.com
+            - hubble.sievert.fun
 operator:
   replicas: 1
 securityContext:
