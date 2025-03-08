@@ -7,6 +7,38 @@ configMapGenerator:
   literals:
   - kustomize.buildOptions="--enable-alpha-plugins --enable-helm"
   - exec.enabled="true"
+  - server.insecure="true"
+kind: Kustomization
+apiVersion: kustomize.config.k8s.io/v1beta1
+namespace: argocd
+
+configMapGenerator:
+- behavior: merge
+  literals:
+  - kustomize.buildOptions="--enable-alpha-plugins --enable-helm"
+  - exec.enabled="true"
+  - server.inesecure="true"
+  - |
+    repository.credentials=- passwordSecret:
+        key: git_token
+        name: autopilot-secret
+      url: https://github.com/
+      usernameSecret:
+        key: git_username
+        name: autopilot-secret
+  - |
+    resource.exclusions=- apiGroups:
+        - cilium.io
+      kinds:
+        - CiliumIdentity
+      clusters:
+        - "*"
+  name: argocd-cm
+
+resources:
+  - github.com/argoproj-labs/argocd-autopilot/manifests/base?ref=v0.4.18
+  - ingressRoute.yaml
+
   - |
     repository.credentials=- passwordSecret:
         key: git_token
