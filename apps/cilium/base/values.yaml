@@ -15,7 +15,7 @@ hubble:
   ui:
     enabled: true
     ingress:
-      enabled: false
+      enabled: true
       annotations:
         cert-manager.io/cluster-issuer: letsencrypt-cloudflare
         external-dns.alpha.kubernetes.io/internal-hostname: hubble.sievert.com
