@@ -1,0 +1,9 @@
+apiVersion: builtin
+kind: HelmChartInflationGenerator
+metadata:
+  name: nfs
+name: csi-driver-nfs
+version: 4.10.0
+namespace: kube-system
+releaseName: csi-driver-nfs
+repo: https://raw.githubusercontent.com/kubernetes-csi/csi-driver-nfs/master/charts
