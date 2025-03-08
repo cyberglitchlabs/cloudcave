@@ -22,3 +22,9 @@ service:
   # -- Additional annotations applied to both TCP and UDP services (e.g. for cloud provider specific config)
   annotations:
       external-dns.alpha.kubernetes.io/hostname: traefik.sievert.fun
+
+persistence:
+  enabled: true
+  accessMode: ReadWriteOnce
+  size: 500Mi
+  storageClass: khal-drogo-nfs
