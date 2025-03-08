@@ -4,4 +4,4 @@ kind: Kustomization
 resources:
   - crds
   - Trident
-  - storage.yaml
+#  - storage.yaml
