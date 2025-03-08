@@ -7,6 +7,11 @@ ipam:
 k8sServiceHost: localhost
 k8sServicePort: 7445
 kubeProxyReplacement: true
+hubble:
+  relay:
+    enabled: true
+  ui:
+    enabled: true
 operator:
   replicas: 1
 securityContext:
