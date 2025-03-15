@@ -9,6 +9,11 @@ controllers:
           pullPolicy: IfNotPresent
         env:
           TZ: "America/Chicago"
+      cli:
+        image:
+          repository: nouchka/sqlite3
+          tag: latest
+          pullPolicy: Always
 
 service:
   app:
