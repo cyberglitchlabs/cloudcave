@@ -9,11 +9,13 @@ controllers:
           pullPolicy: IfNotPresent
         env:
           TZ: "America/Chicago"
-      cli:
+      gui:
         image:
-          repository: nouchka/sqlite3
+          repository: ghcr.io/coleifer/sqlite-web
           tag: latest
           pullPolicy: Always
+        env:
+          SQLITE_DATABASE: absdatabase.sqlite
 
 service:
   app:
@@ -21,6 +23,11 @@ service:
     ports:
       http:
         port: 13378
+  web:
+    controller: audiobooks
+    ports:
+      http:
+        port: 8080
 
 ingress:
   app:
