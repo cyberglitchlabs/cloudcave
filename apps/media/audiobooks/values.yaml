@@ -1,14 +1,41 @@
 controllers:
-  main:
+  audiobooks:
     strategy: Recreate
     containers:
-      main:
+      app:
         image:
           repository: ghcr.io/advplyr/audiobookshelf
           tag: 2.19.5
           pullPolicy: IfNotPresent
         env:
           TZ: "America/Chicago"
+
+service:
+  app:
+    controller: audiobooks
+    ports:
+      http:
+        port: 13378
+
+ingress:
+  app:
+    className: cilium
+    annotations:
+      cert-manager.io/cluster-issuer: letsencrypt-cloudflare
+      external-dns.alpha.kubernetes.io/internal-hostname: audiobooks.sievert.fun
+    hosts:
+      - host: audiobooks.sievert.fun
+        paths:
+          - path: /
+            pathType: Prefix
+            service:
+              identifier: app
+              port: http
+    tls:
+      - secretName: audiobooks-tls
+        hosts:
+          - audiobooks.sievert.fun
+
 persistence:
   config:
     enabled: true
