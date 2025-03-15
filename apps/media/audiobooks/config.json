@@ -1,0 +1,11 @@
+{
+  "appName": "audiobooks",
+  "userGivenName": "audiobooks",
+  "destNamespace": "audiobooks",
+  "destServer": "https://kubernetes.default.svc",
+  "srcPath": "apps/media/audiobooks",
+  "srcRepoURL": "https://github.com/cyberglitchlabs/cloudcave.git",
+  "srcTargetRevision": "",
+  "labels": null,
+  "annotations": null
+}

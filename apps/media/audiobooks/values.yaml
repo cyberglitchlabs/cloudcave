@@ -1,0 +1,20 @@
+controllers:
+  main:
+    strategy: Recreate
+    containers:
+      main:
+        image:
+          repository: ghcr.io/advplyr/audiobookshelf
+          tag: 2.19.5
+          pullPolicy: IfNotPresent
+        env:
+          TZ: "America/Chicago"
+persistence:
+  config:
+    enabled: true
+    type: persistentVolumeClaim
+    accessMode: ReadWriteOnce
+    storageClass: local-path
+    size: 1Gi
+    globalMounts:
+      - path: /config
