@@ -13,6 +13,17 @@ ingress:
   path: /
   tls: true
 
+adminIngress:
+  enabled: true
+  ingressClassName: cilium
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-cloudflare
+    external-dns.alpha.kubernetes.io/internal-hostname: keycloak-admin.sievert.fun
+  hostname: keycloak-admin.sievert.fun
+  path: /
+  tls: true
+
+
 postgresql:
   enabled: true
   auth:
