@@ -1,7 +1,7 @@
 auth:
-  adminUser: admin
-  existingSecret: keycloak-admin-password
-  passwordSecretKey: password
+  existingSecret: keycloak-secrets
+  usernameKey: keycloak-username
+  passwordKey: keycloak-password
 
 ingress:
   enabled: true
@@ -16,7 +16,9 @@ ingress:
 postgresql:
   enabled: true
   auth:
-    existingSecret: keycloak-db-credentials
+    existingSecret: keycloak-secrets
+    usernameKey: keycloak-username
+    passwordKey: keycloak-password
   primary:
     persistence:
       enabled: true
