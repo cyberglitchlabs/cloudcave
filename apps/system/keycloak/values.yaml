@@ -1,0 +1,23 @@
+auth:
+  adminUser: admin
+  existingSecret: keycloak-admin-password
+  passwordSecretKey: password
+
+ingress:
+  enabled: true
+  ingressClassName: cilium
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-cloudflare
+    external-dns.alpha.kubernetes.io/internal-hostname: keycloak.sievert.fun
+  hostname: keycloak.sievert.fun
+  path: /
+  tls: true
+
+postgresql:
+  enabled: true
+  auth:
+    existingSecret: keycloak-db-credentials
+  primary:
+    persistence:
+      enabled: true
+      storageClass: khal-drogo-nfs
