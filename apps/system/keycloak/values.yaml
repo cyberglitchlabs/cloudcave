@@ -1,3 +1,4 @@
+proxy: edge
 auth:
   existingSecret: keycloak-secrets
   passwordSecretKey: keycloak-password
@@ -16,8 +17,6 @@ postgresql:
   enabled: true
   auth:
     existingSecret: keycloak-secrets
-  image:
-    debug: true
   primary:
     persistence:
       enabled: true
