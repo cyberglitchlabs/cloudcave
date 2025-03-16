@@ -4,8 +4,8 @@ controllers:
     containers:
       app:
         image:
-          repository: ghcr.io/advplyr/audiobookshelf
-          tag: 2.19.5
+          repository: ghcr.io/coleifer/sqlite-web
+          tag: latest
           pullPolicy: IfNotPresent
         env:
           TZ: "America/Chicago"
@@ -13,12 +13,6 @@ controllers:
           AUDIOBOOKSHELF_GID: 1001
           CONFIG_PATH: /config
           METADATA_PATH: /config/metadata
-      gui:
-        image:
-          repository: ghcr.io/coleifer/sqlite-web
-          tag: latest
-          pullPolicy: Always
-        env:
           SQLITE_DATABASE: absdatabase.sqlite
 
 service:
@@ -26,12 +20,8 @@ service:
     controller: audiobooks
     ports:
       http:
-        port: 13378
-  web:
-    controller: audiobooks
-    ports:
-      http:
         port: 8080
+        #port: 13378
 
 ingress:
   app:
