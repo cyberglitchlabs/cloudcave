@@ -9,6 +9,10 @@ controllers:
           pullPolicy: IfNotPresent
         env:
           TZ: "America/Chicago"
+          AUDIOBOOKSHELF_UID: 1001
+          AUDIOBOOKSHELF_GID: 1001
+          CONFIG_PATH: /config
+          METADATA_PATH: /config/metadata
       gui:
         image:
           repository: ghcr.io/coleifer/sqlite-web
@@ -47,6 +51,13 @@ ingress:
       - secretName: audiobooks-tls
         hosts:
           - audiobooks.sievert.fun
+
+
+podSecurityContext:
+  runAsUser: 1001
+  runAsGroup: 1001
+  fsGroup: 1001
+  fsGroupChangePolicy: OnRootMismatch
 
 persistence:
   config:
