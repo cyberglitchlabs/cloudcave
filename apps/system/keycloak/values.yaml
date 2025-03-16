@@ -16,8 +16,6 @@ postgresql:
   enabled: true
   auth:
     existingSecret: keycloak-secrets
-    secretKeys:
-      userPasswordKey: postgresql-password
   primary:
     persistence:
       enabled: true
