@@ -16,6 +16,8 @@ postgresql:
   enabled: true
   auth:
     existingSecret: keycloak-secrets
+  image:
+    debug: true
   primary:
     persistence:
       enabled: true
