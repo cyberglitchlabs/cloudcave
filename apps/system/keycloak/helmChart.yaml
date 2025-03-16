@@ -2,7 +2,7 @@ apiVersion: builtin
 kind: HelmChartInflationGenerator
 metadata:
   name: keycloak
-name: app-template
+name: keycloak
 version: 24.4.13
 releaseName: keycloak
 repo: https://charts.bitnami.com/bitnami
