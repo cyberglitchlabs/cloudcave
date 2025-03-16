@@ -1,7 +1,6 @@
 auth:
   existingSecret: keycloak-secrets
-  usernameKey: keycloak-username
-  passwordKey: keycloak-password
+  passwordSecretKey: keycloak-password
 
 ingress:
   enabled: true
@@ -17,8 +16,8 @@ postgresql:
   enabled: true
   auth:
     existingSecret: keycloak-secrets
-    usernameKey: keycloak-username
-    passwordKey: keycloak-password
+    secretKeys:
+      userPasswordKey: postgresql-password
   primary:
     persistence:
       enabled: true
