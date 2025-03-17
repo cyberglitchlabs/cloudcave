@@ -1,0 +1,35 @@
+controllers:
+  it-tools:
+    strategy: Recreate
+    containers:
+      app:
+        image:
+          repository: corentinth/it-tools
+          tag: 2024.10.22-7ca5933
+          pullPolicy: IfNotPresent
+
+service:
+  app:
+    controller: it-tools
+    ports:
+      http:
+        port: 8080
+
+ingress:
+  app:
+    className: cilium
+    annotations:
+      cert-manager.io/cluster-issuer: letsencrypt-cloudflare
+      external-dns.alpha.kubernetes.io/internal-hostname: it-tools.sievert.fun
+    hosts:
+      - host: it-tools.sievert.fun
+        paths:
+          - path: /
+            pathType: Prefix
+            service:
+              identifier: app
+              port: http
+    tls:
+      - secretName: it-tools-tls
+        hosts:
+          - it-tools.sievert.fun
