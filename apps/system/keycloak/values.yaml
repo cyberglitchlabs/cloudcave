@@ -1,4 +1,5 @@
 proxy: edge
+production: true
 auth:
   existingSecret: keycloak-secrets
   passwordSecretKey: keycloak-password
