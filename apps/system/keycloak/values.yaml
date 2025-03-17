@@ -23,6 +23,16 @@ adminIngress:
   path: /
   tls: true
 
+keycloakConfigCli:
+  enabled: true
+  configuration:
+    master.json: |
+      {
+        "realm" : "master",
+        "attributes": {
+          "frontendUrl": "https://keycloak-admin.sievert.fun"
+        }
+      }
 
 postgresql:
   enabled: true
