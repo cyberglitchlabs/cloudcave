@@ -15,7 +15,7 @@ ingress:
   tls: true
 
 adminIngress:
-  enabled: true
+  enabled: false
   ingressClassName: cilium
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt-cloudflare
@@ -23,17 +23,6 @@ adminIngress:
   hostname: keycloak-admin.sievert.fun
   path: /
   tls: true
-
-keycloakConfigCli:
-  enabled: true
-  configuration:
-    master.json: |
-      {
-        "realm" : "master",
-        "attributes": {
-          "frontendUrl": "https://keycloak-admin.sievert.fun"
-        }
-      }
 
 postgresql:
   enabled: true
