@@ -17,7 +17,7 @@ service:
 
 ingress:
   app:
-    className: cilium
+    className: traefik
     annotations:
       cert-manager.io/cluster-issuer: letsencrypt-cloudflare
       external-dns.alpha.kubernetes.io/internal-hostname: it-tools.sievert.fun
