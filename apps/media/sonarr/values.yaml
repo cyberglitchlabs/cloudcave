@@ -9,6 +9,10 @@ controllers:
           pullPolicy: IfNotPresent
         env:
           TZ: "America/Chicago"
+          SONARR__INSTANCE_NAME: Sonarr
+          SONARR__PORT: 8989
+          SONARR__APPLICATION_URL: "https://sonarr.sievert.fun"
+          SONARR__LOG_LEVEL: info
           PUID: 1001
           PGID: 1001
 
@@ -17,7 +21,7 @@ service:
     controller: sonarr
     ports:
       http:
-        port: 8089
+        port: 8989
 
 ingress:
   app:
