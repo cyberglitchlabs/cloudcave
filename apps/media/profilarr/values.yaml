@@ -4,7 +4,7 @@ controllers:
     containers:
       app:
         image:
-          repository: ghcr.io/home-operations/profilarr
+          repository: santiagosayshey/profilarr
           tag: v1.0.0
           pullPolicy: IfNotPresent
         env:
