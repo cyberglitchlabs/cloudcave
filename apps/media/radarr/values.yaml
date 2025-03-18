@@ -15,7 +15,7 @@ service:
     controller: radarr
     ports:
       http:
-        port: 8989
+        port: 7878
 
 ingress:
   app:
