@@ -1,0 +1,11 @@
+{
+  "appName": "profilarr",
+  "userGivenName": "profilarr",
+  "destNamespace": "profilarr",
+  "destServer": "https://kubernetes.default.svc",
+  "srcPath": "apps/media/profilarr",
+  "srcRepoURL": "https://github.com/cyberglitchlabs/cloudcave.git",
+  "srcTargetRevision": "",
+  "labels": null,
+  "annotations": null
+}
