@@ -1,36 +1,35 @@
 controllers:
-  sonarr:
+  prowlarr:
     strategy: Recreate
     containers:
       app:
         image:
-          repository: ghcr.io/home-operations/sonarr
-          tag: 4.0.14.2938
+          repository: ghcr.io/home-operations/prowlarr
+          tag: 1.32.2.4987
           pullPolicy: IfNotPresent
         env:
           TZ: "America/Chicago"
-          SONARR__INSTANCE_NAME: Sonarr
-          SONARR__PORT: 8989
-          SONARR__APPLICATION_URL: "https://sonarr.sievert.fun"
-          SONARR__LOG_LEVEL: info
+          PROWLARR__INSTANCE_NAME: Prowlarr
+          PROWLARR__PORT: 9696
+          PROWLARR__LOG_LEVEL: info
           PUID: 1001
           PGID: 1001
 
 service:
   app:
-    controller: sonarr
+    controller: prowlarr
     ports:
       http:
-        port: 8989
+        port: 9696
 
 ingress:
   app:
     className: traefik
     annotations:
       cert-manager.io/cluster-issuer: letsencrypt-cloudflare
-      external-dns.alpha.kubernetes.io/internal-hostname: sonarr.sievert.fun
+      external-dns.alpha.kubernetes.io/internal-hostname: prowlarr.sievert.fun
     hosts:
-      - host: sonarr.sievert.fun
+      - host: prowlarr.sievert.fun
         paths:
           - path: /
             pathType: Prefix
@@ -38,9 +37,9 @@ ingress:
               identifier: app
               port: http
     tls:
-      - secretName: sonarr-tls
+      - secretName: prowlarr-tls
         hosts:
-          - sonarr.sievert.fun
+          - prowlarr.sievert.fun
 
 
 podSecurityContext:
