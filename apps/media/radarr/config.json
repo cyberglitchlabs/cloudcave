@@ -1,0 +1,11 @@
+{
+  "appName": "radarr",
+  "userGivenName": "radarr",
+  "destNamespace": "radarr",
+  "destServer": "https://kubernetes.default.svc",
+  "srcPath": "apps/media/radarr",
+  "srcRepoURL": "https://github.com/cyberglitchlabs/cloudcave.git",
+  "srcTargetRevision": "",
+  "labels": null,
+  "annotations": null
+}
