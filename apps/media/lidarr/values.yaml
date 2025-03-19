@@ -15,7 +15,7 @@ service:
     controller: lidarr
     ports:
       http:
-        port: 8086
+        port: 8686
 
 ingress:
   app:
