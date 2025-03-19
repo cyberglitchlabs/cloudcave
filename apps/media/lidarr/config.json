@@ -1,0 +1,11 @@
+{
+  "appName": "lidarr",
+  "userGivenName": "lidarr",
+  "destNamespace": "lidarr",
+  "destServer": "https://kubernetes.default.svc",
+  "srcPath": "apps/media/lidarr",
+  "srcRepoURL": "https://github.com/cyberglitchlabs/cloudcave.git",
+  "srcTargetRevision": "",
+  "labels": null,
+  "annotations": null
+}

@@ -1,30 +1,30 @@
 controllers:
-  readarr:
+  lidarr:
     strategy: Recreate
     containers:
       app:
         image:
-          repository: ghcr.io/home-operations/readarr
-          tag: 0.4.12.2753
+          repository: ghcr.io/home-operations/lidarr
+          tag: 2.10.1.4589
           pullPolicy: IfNotPresent
         env:
           TZ: "America/Chicago"
 
 service:
   app:
-    controller: readarr
+    controller: lidarr
     ports:
       http:
-        port: 8787
+        port: 8086
 
 ingress:
   app:
     className: traefik
     annotations:
       cert-manager.io/cluster-issuer: letsencrypt-cloudflare
-      external-dns.alpha.kubernetes.io/internal-hostname: readarr.sievert.fun
+      external-dns.alpha.kubernetes.io/internal-hostname: lidarr.sievert.fun
     hosts:
-      - host: readarr.sievert.fun
+      - host: lidarr.sievert.fun
         paths:
           - path: /
             pathType: Prefix
@@ -32,9 +32,9 @@ ingress:
               identifier: app
               port: http
     tls:
-      - secretName: readarr-tls
+      - secretName: lidarr-tls
         hosts:
-          - readarr.sievert.fun
+          - lidarr.sievert.fun
 
 podSecurityContext:
   runAsUser: 65534
