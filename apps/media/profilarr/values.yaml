@@ -5,7 +5,7 @@ controllers:
       app:
         image:
           repository: santiagosayshey/profilarr
-          tag: v1.0.0
+          tag: v1.0.1
           pullPolicy: IfNotPresent
         env:
           TZ: "America/Chicago"
