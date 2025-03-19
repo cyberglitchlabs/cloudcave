@@ -1,30 +1,32 @@
 controllers:
-  profilarr:
+  notifiarr:
     strategy: Recreate
     containers:
       app:
         image:
-          repository: santiagosayshey/profilarr
-          tag: v1.0.0
+          repository: golift/notifiarr
+          tag: 0.8.3
           pullPolicy: IfNotPresent
         env:
           TZ: "America/Chicago"
+          PUID: 65534
+          PGID: 65534
 
 service:
   app:
-    controller: profilarr
+    controller: notifiarr
     ports:
       http:
-        port: 6868
+        port: 5454
 
 ingress:
   app:
     className: traefik
     annotations:
       cert-manager.io/cluster-issuer: letsencrypt-cloudflare
-      external-dns.alpha.kubernetes.io/internal-hostname: profilarr.sievert.fun
+      external-dns.alpha.kubernetes.io/internal-hostname: notifiarr.sievert.fun
     hosts:
-      - host: profilarr.sievert.fun
+      - host: notifiarr.sievert.fun
         paths:
           - path: /
             pathType: Prefix
@@ -32,9 +34,9 @@ ingress:
               identifier: app
               port: http
     tls:
-      - secretName: profilarr-tls
+      - secretName: notifiarr-tls
         hosts:
-          - profilarr.sievert.fun
+          - notifiarr.sievert.fun
 
 podSecurityContext:
   runAsUser: 65534

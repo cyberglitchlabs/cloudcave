@@ -40,7 +40,6 @@ ingress:
         hosts:
           - audiobooks.sievert.fun
 
-
 podSecurityContext:
   runAsUser: 1001
   runAsGroup: 1001

@@ -41,7 +41,6 @@ ingress:
         hosts:
           - prowlarr.sievert.fun
 
-
 podSecurityContext:
   runAsUser: 65534
   runAsGroup: 65534
