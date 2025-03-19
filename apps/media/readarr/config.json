@@ -1,0 +1,11 @@
+{
+  "appName": "readarr",
+  "userGivenName": "readarr",
+  "destNamespace": "readarr",
+  "destServer": "https://kubernetes.default.svc",
+  "srcPath": "apps/media/readarr",
+  "srcRepoURL": "https://github.com/cyberglitchlabs/cloudcave.git",
+  "srcTargetRevision": "",
+  "labels": null,
+  "annotations": null
+}
