@@ -8,7 +8,7 @@ k8sServiceHost: localhost
 k8sServicePort: 7445
 kubeProxyReplacement: true
 ingressController:
-    enabled: true
+    enabled: false
 hubble:
   relay:
     enabled: true
