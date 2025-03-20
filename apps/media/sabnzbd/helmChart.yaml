@@ -1,0 +1,9 @@
+apiVersion: builtin
+kind: HelmChartInflationGenerator
+metadata:
+  name: sabnzbd
+name: app-template
+version: 3.7.3
+releaseName: sabnzbd
+repo: https://bjw-s.github.io/helm-charts
+valuesFile: values.yaml
