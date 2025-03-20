@@ -44,6 +44,9 @@ env:
         name: cloudflare
         key: token
 
+updateStrategy:
+  type: Recreate
+
 experimental:
   plugins:
     themepark:
