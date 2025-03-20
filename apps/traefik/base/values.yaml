@@ -47,7 +47,7 @@ env:
 experimental:
   plugins:
     themepark:
-      modulename: "github.com/packruler/traefik-themepark"
+      moduleName: "github.com/packruler/traefik-themepark"
       version: "v1.2.0"
 
 deployment:
