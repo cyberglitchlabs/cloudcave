@@ -44,6 +44,12 @@ env:
         name: cloudflare
         key: token
 
+experimental:
+  plugins:
+    themepark:
+      modulename: "github.com/packruler/traefik-themepark"
+      version: "v1.2.0"
+
 deployment:
   initContainers:
     - name: volume-permissions
