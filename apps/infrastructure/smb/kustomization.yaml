@@ -3,6 +3,7 @@ kind: Kustomization
 
 resources:
   - ns.yaml
+  - pv-smb.yaml
 
 generators:
 - helmChart.yaml
