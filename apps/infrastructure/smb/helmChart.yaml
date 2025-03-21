@@ -1,0 +1,9 @@
+apiVersion: builtin
+kind: HelmChartInflationGenerator
+metadata:
+  name: smb
+name: csi-driver-smb
+version: 1.17.0
+namespace: kube-system
+releaseName: csi-driver-smb
+repo: https://raw.githubusercontent.com/kubernetes-csi/csi-driver-smb/master/charts
