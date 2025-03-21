@@ -1,9 +1,9 @@
 {
-  "appName": "metallb",
-  "userGivenName": "metallb",
-  "destNamespace": "metallb-system",
+  "appName": "nfs",
+  "userGivenName": "nfs",
+  "destNamespace": "default",
   "destServer": "https://kubernetes.default.svc",
-  "srcPath": "apps/metallb/overlays/infrastructure",
+  "srcPath": "apps/infrastructure/nfs",
   "srcRepoURL": "https://github.com/cyberglitchlabs/cloudcave.git",
   "srcTargetRevision": "",
   "labels": null,

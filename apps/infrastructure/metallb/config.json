@@ -1,9 +1,9 @@
 {
-  "appName": "traefik",
-  "userGivenName": "traefik",
-  "destNamespace": "traefik",
+  "appName": "metallb",
+  "userGivenName": "metallb",
+  "destNamespace": "metallb-system",
   "destServer": "https://kubernetes.default.svc",
-  "srcPath": "apps/traefik/overlays/infrastructure",
+  "srcPath": "apps/infrastructure/metallb",
   "srcRepoURL": "https://github.com/cyberglitchlabs/cloudcave.git",
   "srcTargetRevision": "",
   "labels": null,

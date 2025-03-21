@@ -1,9 +1,9 @@
 {
-  "appName": "qnap",
-  "userGivenName": "qnap",
+  "appName": "external-dns",
+  "userGivenName": "external-dns",
   "destNamespace": "default",
   "destServer": "https://kubernetes.default.svc",
-  "srcPath": "apps/qnap/overlays/infrastructure",
+  "srcPath": "apps/infrastructure/external-dns",
   "srcRepoURL": "https://github.com/cyberglitchlabs/cloudcave.git",
   "srcTargetRevision": "",
   "labels": null,

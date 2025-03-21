@@ -3,7 +3,7 @@
   "userGivenName": "local-path-storage",
   "destNamespace": "default",
   "destServer": "https://kubernetes.default.svc",
-  "srcPath": "apps/local-path-storage/overlays/infrastructure",
+  "srcPath": "apps/infrastructure/local-path-storage",
   "srcRepoURL": "https://github.com/cyberglitchlabs/cloudcave.git",
   "srcTargetRevision": "",
   "labels": null,

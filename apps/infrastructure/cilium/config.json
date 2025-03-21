@@ -1,9 +1,9 @@
 {
-  "appName": "cert-manager",
-  "userGivenName": "cert-manager",
-  "destNamespace": "default",
+  "appName": "cilium",
+  "userGivenName": "cilium",
+  "destNamespace": "kube-system",
   "destServer": "https://kubernetes.default.svc",
-  "srcPath": "apps/cert-manager/overlays/infrastructure",
+  "srcPath": "apps/infrastructure/cilium",
   "srcRepoURL": "https://github.com/cyberglitchlabs/cloudcave.git",
   "srcTargetRevision": "",
   "labels": null,

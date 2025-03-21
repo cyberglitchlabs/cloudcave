@@ -36,7 +36,7 @@ spec:
   generators:
   - git:
       files:
-      - path: apps/**/infrastructure/config.json
+      - path: apps/infrastructure/**/config.json
       repoURL: https://github.com/cyberglitchlabs/cloudcave.git
       requeueAfterSeconds: 20
       revision: ""
@@ -47,7 +47,7 @@ spec:
           project: ""
   - git:
       files:
-      - path: apps/**/infrastructure/config_dir.json
+      - path: apps/infrastructure/**/config_dir.json
       repoURL: https://github.com/cyberglitchlabs/cloudcave.git
       requeueAfterSeconds: 20
       revision: ""
