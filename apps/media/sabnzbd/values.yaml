@@ -62,4 +62,4 @@ persistence:
   media:
     enabled: true
     type: persistentVolumeClaim
-    existingClaim: smb-sadnzbd
+    existingClaim: smb-sabnzbd
