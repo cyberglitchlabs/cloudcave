@@ -1,4 +1,3 @@
----
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
@@ -11,3 +10,4 @@ spec:
       storage: 10Gi
   volumeName: smb-media
   storageClassName: smb
+

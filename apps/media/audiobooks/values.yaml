@@ -58,4 +58,4 @@ persistence:
   media:
     enabled: true
     type: persistentVolumeClaim
-    existingClaim: smb-media
+    existingClaim: smb-audiobooks

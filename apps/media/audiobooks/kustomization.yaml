@@ -4,6 +4,25 @@ kind: Kustomization
 resources:
   - ../../../bases/smb-media
 
+
+patches:
+  - target:
+      version: v1
+      kind: PersistentVolume
+      name: smb-media
+    patch: |-
+      - op: replace
+        path: /metadata/name
+        value: smb-audiobooks
+  - target:
+      version: v1
+      kind: PersistentVolumeClaim
+      name: smb-media
+    patch: |-
+      - op: replace
+        path: /metadata/name
+        value: smb-audiobooks
+
 generators:
 - helmChart.yaml
 
