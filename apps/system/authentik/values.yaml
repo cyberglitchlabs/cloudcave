@@ -5,19 +5,20 @@ authentik:
   error_reporting:
     enabled: true
 
-envValueFrom:
-  AUTHENTIK_SECRET_KEY:
-    secretKeyRef:
-      key: secret_key
-      name: authentik
-  AUTHENTIK_POSTGRESQL__PASSWORD:
-    secretKeyRef:
-      key: postgresql-password
-      name: postgres
-  AUTHENTIK_REDIS__PASSWORD:
-    secretKeyRef:
-      key: password
-      name: redis
+global:
+  envValueFrom:
+    AUTHENTIK_SECRET_KEY:
+      secretKeyRef:
+        key: secret_key
+        name: authentik
+    AUTHENTIK_POSTGRESQL__PASSWORD:
+      secretKeyRef:
+        key: postgresql-password
+        name: postgres
+    AUTHENTIK_REDIS__PASSWORD:
+      secretKeyRef:
+        key: password
+        name: redis
 
 server:
   ingress:

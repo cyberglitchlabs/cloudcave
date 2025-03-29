@@ -3,7 +3,7 @@ kind: HelmChartInflationGenerator
 metadata:
   name: authentik
 name: authentik
-version: 2025.2.2
+version: 2025.2.3
 releaseName: authentik
-repo: oci://registry-1.docker.io/bitnamicharts
+repo: https://charts.goauthentik.io
 valuesFile: values.yaml
