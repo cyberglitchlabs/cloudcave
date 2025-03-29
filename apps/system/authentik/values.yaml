@@ -39,5 +39,3 @@ postgresql:
     accessModes:
       - ReadWriteOnce
   existingSecret: postgres
-redis: 
-  enabled: true
