@@ -21,9 +21,17 @@ global:
 
 server:
   ingress:
+    ingressClassName: traefik
     enabled: true
+    annotations:
+      cert-manager.io/cluster-issuer: letsencrypt-cloudflare
+      external-dns.alpha.kubernetes.io/internal-hostname: authentik.sieverto.fun
     hosts:
-      - authentik.domain.tld
+      - authentik.sievert.fun
+    tls:
+      - secretName: authentik-tls
+        hosts:
+          - authentik.sievert.fun
 
 postgresql:
   # -- enable the bundled bitnami postgresql chart
