@@ -8,6 +8,8 @@ authentik:
 global:
   defaultStorageClass: khal-drogo-nfs
   env:
+    - name: AUTHENTIK_HOST
+      value: authentik.sievert.fun
     - name: AUTHENTIK_SECRET_KEY
       valueFrom:
         secretKeyRef:
