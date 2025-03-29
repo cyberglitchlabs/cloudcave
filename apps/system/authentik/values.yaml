@@ -6,6 +6,7 @@ authentik:
     enabled: true
 
 global:
+  defaultStorageClass: khal-drogo-nfs
   env:
     - name: AUTHENTIK_SECRET_KEY
       valueFrom:
@@ -39,3 +40,6 @@ postgresql:
     accessModes:
       - ReadWriteOnce
   existingSecret: postgres
+
+redis:
+  enabled: true
