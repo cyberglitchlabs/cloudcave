@@ -48,7 +48,3 @@ redis:
     storageClass: khal-drogo-nfs
   enabled: true
   architecture: standalone
-  auth:
-    enabled: true
-    existingSecret: redis
-    existingSecretPasswordKey: password
