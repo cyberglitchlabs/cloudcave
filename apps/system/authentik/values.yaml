@@ -6,7 +6,7 @@ authentik:
     enabled: true
 
 global:
-  envFrom:
+  env:
     - name: AUTHENTIK_SECRET_KEY
       secretKeyRef:
         key: secret_key
