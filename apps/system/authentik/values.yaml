@@ -35,7 +35,7 @@ postgresql:
     defaultStorageClass: khal-drogo-nfs
     postgresql:
       auth:
-        existingSecret: "postgresql-credentials"
+        existingSecret: "authentikcreds"
   persistence:
     enabled: true
     accessModes:
