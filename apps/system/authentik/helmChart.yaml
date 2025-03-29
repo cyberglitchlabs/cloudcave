@@ -1,0 +1,9 @@
+apiVersion: builtin
+kind: HelmChartInflationGenerator
+metadata:
+  name: authentik
+name: authentik
+version: 2025.2.2
+releaseName: authentik
+repo: oci://registry-1.docker.io/bitnamicharts
+valuesFile: values.yaml

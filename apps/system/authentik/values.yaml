@@ -1,0 +1,51 @@
+authentik:
+  secret_key: "PleaseGenerateA50CharKey"
+  # This sends anonymous usage-data, stack traces on errors and
+  # performance data to authentik.error-reporting.a7k.io, and is fully opt-in
+  error_reporting:
+    enabled: true
+
+envValueFrom:
+  AUTHENTIK_SECRET_KEY:
+    secretKeyRef:
+      key: secret_key
+      name: authentik
+  AUTHENTIK_POSTGRESQL__PASSWORD:
+    secretKeyRef:
+      key: postgresql-password
+      name: postgres
+  AUTHENTIK_REDIS__PASSWORD:
+    secretKeyRef:
+      key: password
+      name: redis
+
+server:
+  ingress:
+    enabled: true
+    hosts:
+      - authentik.domain.tld
+
+postgresql:
+  # -- enable the bundled bitnami postgresql chart
+  enabled: true
+  postgresqlUsername: "authentik"
+  postgresqlDatabase: "authentik"
+  global:
+    defaultStorageClass: khal-drogo-nfs
+    postgresql:
+      auth:
+        existingSecret: "postgresql-credentials"
+  persistence:
+    enabled: true
+    accessModes:
+      - ReadWriteOnce
+  existingSecret: postgres
+
+redis:
+  # -- enable the bundled bitnami redis chart
+  enabled: true
+  architecture: standalone
+  auth:
+    enabled: true
+    existingSecret: redis
+    existingSecretPasswordKey: password
