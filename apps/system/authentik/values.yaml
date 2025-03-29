@@ -8,13 +8,15 @@ authentik:
 global:
   env:
     - name: AUTHENTIK_SECRET_KEY
-      secretKeyRef:
-        key: secret_key
-        name: authentikcreds
+      valueFrom:
+        secretKeyRef:
+          key: secret_key
+          name: authentikcreds
     - name: AUTHENTIK_POSTGRESQL__PASSWORD
-      secretKeyRef:
-        key: password
-        name: authentikcreds
+      valueFrom:
+        secretKeyRef:
+          key: password
+          name: authentikcreds
 
 server:
   ingress:
