@@ -43,3 +43,8 @@ postgresql:
 
 redis:
   enabled: true
+  global:
+    defaultStorageClass: khal-drogo-nfs
+  persistence:
+    enabled: true
+    storageClass: khal-drogo-nfs
