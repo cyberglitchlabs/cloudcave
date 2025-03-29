@@ -44,6 +44,8 @@ postgresql:
 
 redis:
   # -- enable the bundled bitnami redis chart
+  global:
+    defaultStorageClass: khal-drogo-nfs
   enabled: true
   architecture: standalone
   auth:
