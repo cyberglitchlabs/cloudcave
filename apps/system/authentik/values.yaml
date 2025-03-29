@@ -6,19 +6,15 @@ authentik:
     enabled: true
 
 global:
-  envValueFrom:
-    AUTHENTIK_SECRET_KEY:
+  envFrom:
+    - name: AUTHENTIK_SECRET_KEY
       secretKeyRef:
         key: secret_key
-        name: authentik
-    AUTHENTIK_POSTGRESQL__PASSWORD:
-      secretKeyRef:
-        key: postgresql-password
-        name: postgres
-    AUTHENTIK_REDIS__PASSWORD:
+        name: authentikcreds
+    - name: AUTHENTIK_POSTGRESQL__PASSWORD
       secretKeyRef:
         key: password
-        name: redis
+        name: authentikcreds
 
 server:
   ingress:
