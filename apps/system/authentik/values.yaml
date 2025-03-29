@@ -41,10 +41,3 @@ postgresql:
     accessModes:
       - ReadWriteOnce
   existingSecret: postgres
-
-redis:
-  # -- enable the bundled bitnami redis chart
-  persistence:
-    storageClass: khal-drogo-nfs
-  enabled: true
-  architecture: standalone
