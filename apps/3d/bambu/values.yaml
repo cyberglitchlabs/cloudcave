@@ -4,7 +4,7 @@ controllers:
     containers:
       app:
         image:
-          repository: lscr.io/linuxserver/bambustudio:latest
+          repository: lscr.io/linuxserver/bambustudio
           tag: 02.00.02
           pullPolicy: IfNotPresent
         env:
