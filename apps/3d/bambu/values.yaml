@@ -1,5 +1,5 @@
 controllers:
-  audiobooks:
+  bambu:
     strategy: Recreate
     containers:
       app:
