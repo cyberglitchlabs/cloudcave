@@ -55,3 +55,7 @@ persistence:
     size: 1Gi
     globalMounts:
       - path: /config
+  media:
+    enabled: true
+    type: persistentVolumeClaim
+    existingClaim: smb-sonarr

@@ -1,0 +1,62 @@
+authentik:
+  secret_key: "PleaseGenerateA50CharKey"
+  # This sends anonymous usage-data, stack traces on errors and
+  # performance data to authentik.error-reporting.a7k.io, and is fully opt-in
+  error_reporting:
+    enabled: true
+
+global:
+  defaultStorageClass: khal-drogo-nfs
+  env:
+    - name: AUTHENTIK_HOST_BROWSER
+      value: "http://authentik.sievert.fun"
+    - name: AUTHENTIK_HOST
+      value: "http://authentik.sievert.fun"
+    - name: AUTHENTIK_SECRET_KEY
+      valueFrom:
+        secretKeyRef:
+          key: secret_key
+          name: authentikcreds
+    - name: AUTHENTIK_POSTGRESQL__PASSWORD
+      valueFrom:
+        secretKeyRef:
+          key: password
+          name: authentikcreds
+
+server:
+  ingress:
+    ingressClassName: traefik
+    enabled: true
+    annotations:
+      cert-manager.io/cluster-issuer: letsencrypt-cloudflare
+      external-dns.alpha.kubernetes.io/internal-hostname: authentik.sievert.fun
+    hosts:
+      - authentik.sievert.fun
+    tls:
+      - secretName: authentik-tls
+        hosts:
+          - authentik.sievert.fun
+
+postgresql:
+  # -- enable the bundled bitnami postgresql chart
+  enabled: true
+  postgresqlUsername: "authentik"
+  postgresqlDatabase: "authentik"
+  global:
+    defaultStorageClass: khal-drogo-nfs
+    postgresql:
+      auth:
+        existingSecret: "authentikcreds"
+  persistence:
+    enabled: true
+    accessModes:
+      - ReadWriteOnce
+  existingSecret: postgres
+
+redis:
+  enabled: true
+  global:
+    defaultStorageClass: khal-drogo-nfs
+  persistence:
+    enabled: true
+    storageClass: khal-drogo-nfs

@@ -1,0 +1,11 @@
+{
+  "appName": "authentik",
+  "userGivenName": "authentik",
+  "destNamespace": "authentik",
+  "destServer": "https://kubernetes.default.svc",
+  "srcPath": "apps/system/authentik",
+  "srcRepoURL": "https://github.com/cyberglitchlabs/cloudcave.git",
+  "srcTargetRevision": "",
+  "labels": null,
+  "annotations": null
+}
