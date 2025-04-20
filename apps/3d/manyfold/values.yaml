@@ -15,19 +15,39 @@ controllers:
           SECRET_KEY_BASE:
             valueFrom:
               secretKeyRef:
-                name: manyfold-db-secret
-                key: secret-key-base
+                name: manyfold-vault-secrets
+                key: api.txt
           DATABASE_ADAPTER: postgresql
-          DATABASE_HOST: postgres-server
-          DATABASE_PORT: 5432
-          DATABASE_NAME: manyfold
-          DATABASE_USER: manyfold
+          DATABASE_HOST:
+            valueFrom:
+              secretKeyRef:
+                name: manyfold-vault-secrets
+                key: database.txt
+          DATABASE_PORT:
+            valueFrom:
+              secretKeyRef:
+                name: manyfold-vault-secrets
+                key: database.txt
+          DATABASE_NAME:
+            valueFrom:
+              secretKeyRef:
+                name: manyfold-vault-secrets
+                key: database.txt
+          DATABASE_USER:
+            valueFrom:
+              secretKeyRef:
+                name: manyfold-vault-secrets
+                key: database.txt
           DATABASE_PASSWORD:
             valueFrom:
               secretKeyRef:
-                name: manyfold-db-secret
-                key: postgres-password
-          REDIS_URL: redis://:redis_password@redis-server:6379/1
+                name: manyfold-vault-secrets
+                key: database.txt
+          REDIS_URL:
+            valueFrom:
+              secretKeyRef:
+                name: manyfold-vault-secrets
+                key: api.txt
 
   redis:
     strategy: Recreate
@@ -38,7 +58,11 @@ controllers:
           tag: "7.2"
           pullPolicy: IfNotPresent
         env:
-          REDIS_PASSWORD: "redis_password"
+          REDIS_PASSWORD:
+            valueFrom:
+              secretKeyRef:
+                name: manyfold-vault-secrets
+                key: api.txt
 
   postgres:
     strategy: Recreate
@@ -49,13 +73,21 @@ controllers:
           tag: "16.2"
           pullPolicy: IfNotPresent
         env:
-          POSTGRES_USER: "manyfold"
+          POSTGRES_USER:
+            valueFrom:
+              secretKeyRef:
+                name: manyfold-vault-secrets
+                key: database.txt
           POSTGRES_PASSWORD:
             valueFrom:
               secretKeyRef:
-                name: manyfold-db-secret
-                key: postgres-password
-          POSTGRES_DB: "manyfold"
+                name: manyfold-vault-secrets
+                key: database.txt
+          POSTGRES_DB:
+            valueFrom:
+              secretKeyRef:
+                name: manyfold-vault-secrets
+                key: database.txt
 
 service:
   app:

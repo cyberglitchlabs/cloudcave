@@ -4,4 +4,7 @@ kind: Kustomization
 generators:
 - helmChart.yaml
 
-namespace: bambu
+resources:
+- secrets.yaml
+
+namespace: manyfold
