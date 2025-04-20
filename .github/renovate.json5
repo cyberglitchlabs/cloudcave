@@ -1,0 +1,142 @@
+{
+  // Schema reference for validation
+  $schema: "https://docs.renovatebot.com/renovate-schema.json",
+
+  // Extend the base configuration
+  extends: [
+    "config:base"  // Use the base configuration as a starting point
+  ],
+
+  // Define rules for different types of dependencies
+  packageRules: [
+    {
+      // Group all Helm-related updates together
+      matchManagers: ["helm-requirements", "helm-values"],
+      groupName: "helm dependencies"
+    },
+    {
+      // Group all container image updates together
+      matchManagers: ["docker-compose", "dockerfile", "kubernetes"],
+      groupName: "container images"
+    },
+    {
+      // Keep Redis on major version 7 to avoid breaking changes
+      matchPackagePatterns: ["^redis$"],
+      allowedVersions: "7.x",
+      automerge: true,
+      automergeType: "branch"
+    },
+    {
+      // Keep Postgres on major version 16
+      matchPackagePatterns: ["^postgres$"],
+      allowedVersions: "16.x",
+      automerge: true,
+      automergeType: "branch"
+    },
+    {
+      // Keep Manyfold and Bambu on their current version series
+      matchPackagePatterns: ["^lscr.io/linuxserver/manyfoldstudio$", "^lscr.io/linuxserver/bambustudio$"],
+      allowedVersions: "02.00.x",
+      automerge: true,
+      automergeType: "branch"
+    },
+    {
+      // Keep cert-manager on major version 1
+      matchPackagePatterns: ["^cert-manager$"],
+      allowedVersions: "1.x",
+      automerge: true,
+      automergeType: "branch"
+    },
+    {
+      // Keep cilium on major version 1
+      matchPackagePatterns: ["^cilium$"],
+      allowedVersions: "1.x",
+      automerge: true,
+      automergeType: "branch"
+    },
+    {
+      // Keep external-dns on major version 1
+      matchPackagePatterns: ["^external-dns$"],
+      allowedVersions: "1.x",
+      automerge: true,
+      automergeType: "branch"
+    },
+    {
+      // Keep metallb on version 0.14.x
+      matchPackagePatterns: ["^metallb$"],
+      allowedVersions: "0.14.x",
+      automerge: true,
+      automergeType: "branch"
+    },
+    {
+      // Keep nfs on major version 4
+      matchPackagePatterns: ["^csi-driver-nfs$"],
+      allowedVersions: "4.x",
+      automerge: true,
+      automergeType: "branch"
+    },
+    {
+      // Keep traefik themepark plugin on major version 1
+      matchPackagePatterns: ["^github.com/packruler/traefik-themepark$"],
+      allowedVersions: "1.x",
+      automerge: true,
+      automergeType: "branch"
+    },
+    {
+      // Keep audiobookshelf on major version 2
+      matchPackagePatterns: ["^ghcr.io/advplyr/audiobookshelf$"],
+      allowedVersions: "2.x",
+      automerge: true,
+      automergeType: "branch"
+    }
+  ],
+
+  // Configure Kubernetes-specific settings
+  kubernetes: {
+    // Scan all YAML files for container images
+    fileMatch: ["\\.yaml$", "\\.yml$"]
+  },
+
+  // Configure Helm-specific settings
+  "helm-values": {
+    // Specifically target values.yaml files
+    fileMatch: ["values\\.yaml$"]
+  },
+
+  // Run updates every weekend
+  schedule: ["every weekend"],
+  timezone: "America/Chicago",  // Use your local timezone
+
+  // Rate limiting for PR creation
+  prHourlyLimit: 4,      // Maximum 4 PRs per hour
+  prConcurrentLimit: 16, // Maximum 16 concurrent PRs
+
+  // Add labels to all PRs
+  labels: ["dependencies"],
+
+  // Use semantic commits for better changelog generation
+  semanticCommits: true,
+  semanticCommitType: "fix",
+  semanticCommitScope: "deps",
+
+  // Enable automerge for minor updates
+  automerge: true,
+  automergeType: "branch",
+  platformAutomerge: true,
+
+  // Enable dependency dashboard for better visibility
+  dependencyDashboard: true,
+  dependencyDashboardTitle: "Renovate Dependency Dashboard",
+
+  // Automatically rebase when behind base branch
+  rebaseWhen: "behind-base-branch",
+
+  // Enable specific package managers
+  enabledManagers: [
+    "helm-requirements",  // For Helm chart requirements
+    "helm-values",       // For Helm values files
+    "kubernetes",        // For Kubernetes manifests
+    "docker-compose",    // For Docker Compose files
+    "dockerfile"         // For Dockerfiles
+  ]
+} 
