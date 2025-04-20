@@ -1,0 +1,11 @@
+{
+  "appName": "vault",
+  "userGivenName": "vault",
+  "destNamespace": "vault",
+  "destServer": "https://kubernetes.default.svc",
+  "srcPath": "apps/infrastructure/vault",
+  "srcRepoURL": "https://github.com/cyberglitchlabs/cloudcave.git",
+  "srcTargetRevision": "",
+  "labels": null,
+  "annotations": null
+} 

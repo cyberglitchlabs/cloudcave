@@ -1,0 +1,107 @@
+global:
+  tlsDisable: false
+
+server:
+  # Enable the Vault UI
+  ui:
+    enabled: true
+    serviceType: ClusterIP
+    externalPort: 8200
+
+  # Configure ingress for the Vault UI
+  ingress:
+    enabled: true
+    className: traefik
+    annotations:
+      cert-manager.io/cluster-issuer: letsencrypt-cloudflare
+      external-dns.alpha.kubernetes.io/internal-hostname: vault.sievert.fun
+    hosts:
+      - host: vault.sievert.fun
+        paths:
+          - path: /
+            pathType: Prefix
+    tls:
+      - secretName: vault-tls
+        hosts:
+          - vault.sievert.fun
+
+  # Configure persistence
+  dataStorage:
+    enabled: true
+    size: 10Gi
+    storageClass: khal-drogo-nfs
+    accessMode: ReadWriteOnce
+
+  # Configure security context
+  securityContext:
+    runAsNonRoot: true
+    runAsUser: 1000
+    runAsGroup: 1000
+    fsGroup: 1000
+    fsGroupChangePolicy: OnRootMismatch
+
+  # Configure resources
+  resources:
+    requests:
+      cpu: 250m
+      memory: 256Mi
+    limits:
+      cpu: 500m
+      memory: 512Mi
+
+  # Configure readiness and liveness probes
+  readinessProbe:
+    enabled: true
+    initialDelaySeconds: 5
+    periodSeconds: 10
+  livenessProbe:
+    enabled: true
+    initialDelaySeconds: 15
+    periodSeconds: 20
+
+  # Configure affinity for better scheduling
+  affinity:
+    podAntiAffinity:
+      preferredDuringSchedulingIgnoredDuringExecution:
+        - weight: 100
+          podAffinityTerm:
+            labelSelector:
+              matchExpressions:
+                - key: app.kubernetes.io/name
+                  operator: In
+                  values:
+                    - vault
+            topologyKey: kubernetes.io/hostname
+
+  # Configure Vault server settings
+  extraEnvironmentVars:
+    VAULT_API_ADDR: "https://vault.sievert.fun:8200"
+    VAULT_CLUSTER_ADDR: "https://vault:8201"
+
+  # Configure Vault server configuration
+  extraConfig: |
+    ui = true
+    api_addr = "https://vault.sievert.fun:8200"
+    cluster_addr = "https://vault:8201"
+    default_lease_ttl = "768h"
+    max_lease_ttl = "768h"
+
+  # Enable and configure the KV secrets engine
+  extraSecretEnvironmentVars:
+    - name: VAULT_DEV_ROOT_TOKEN_ID
+      value: "root"
+    - name: VAULT_DEV_LISTEN_ADDRESS
+      value: "0.0.0.0:8200"
+
+  # Configure Vault server initialization
+  extraInitContainers:
+    - name: vault-init
+      image: vault:1.16.1
+      command: ["/bin/sh", "-c"]
+      args:
+        - |
+          vault operator init -key-shares=1 -key-threshold=1 -format=json > /vault/data/init.json
+          vault operator unseal $(cat /vault/data/init.json | jq -r '.unseal_keys_b64[0]')
+      volumeMounts:
+        - name: vault-data
+          mountPath: /vault/data
