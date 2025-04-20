@@ -4,6 +4,7 @@ metadata:
   name: argocd-server
   namespace: argocd
   annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-cloudflare
     external-dns.alpha.kubernetes.io/internal-hostname: argocd.sievert.fun
     external-dns.alpha.kubernetes.io/target: traefik.sievert.fun
     kubernetes.io/ingress.class: traefik
@@ -26,3 +27,5 @@ spec:
           scheme: h2c
   tls:
     certResolver: letsencrypt
+    domains:
+      - main: argocd.sievert.fun
