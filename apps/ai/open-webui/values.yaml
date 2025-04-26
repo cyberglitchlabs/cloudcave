@@ -4,6 +4,9 @@ ollama:
 ollamaUrls:
   - http://ollama.ollama.svc.cluster.local:11434
 
+websocket:
+  enabled: true
+
 ingress:
   enabled: true
   annotations:
