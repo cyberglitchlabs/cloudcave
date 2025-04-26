@@ -2,8 +2,8 @@ apiVersion: builtin
 kind: HelmChartInflationGenerator
 metadata:
   name: ollama
-name: app-template
-version: 3.7.3
+name: ollama
+version: 1.15.0
 releaseName: ollama
 repo: https://otwld.github.io/ollama-helm/
 valuesFile: values.yaml
