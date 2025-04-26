@@ -6,11 +6,7 @@ ingress:
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt-cloudflare
     external-dns.alpha.kubernetes.io/internal-hostname: chat.sievert.fun
-  hosts:
-  - host: chat.sievert.fun
-    paths:
-      - path: /
-        pathType: Prefix
+  hosts: chat.sievert.fun
   tls:
     - secretName: chat-tls
       hosts:
