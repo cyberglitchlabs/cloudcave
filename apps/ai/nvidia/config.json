@@ -1,0 +1,11 @@
+{
+  "appName": "nvidia",
+  "userGivenName": "nvidia",
+  "destNamespace": "nvidia",
+  "destServer": "https://kubernetes.default.svc",
+  "srcPath": "apps/ai/nvidia",
+  "srcRepoURL": "https://github.com/cyberglitchlabs/cloudcave.git",
+  "srcTargetRevision": "",
+  "labels": null,
+  "annotations": null
+}

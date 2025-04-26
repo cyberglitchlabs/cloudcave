@@ -1,0 +1,8 @@
+apiVersion: builtin
+kind: HelmChartInflationGenerator
+metadata:
+  name: nvidia-device-plugin
+name: nvidia-device-plugin
+version: 0.17.1
+releaseName: nvidia-device-plugin
+repo: https://nvidia.github.io/k8s-device-plugin
