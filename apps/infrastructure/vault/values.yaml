@@ -17,9 +17,7 @@ server:
       external-dns.alpha.kubernetes.io/internal-hostname: vault.sievert.fun
     hosts:
       - host: vault.sievert.fun
-        paths:
-          - path: /
-            pathType: Prefix
+        paths: []
     tls:
       - secretName: vault-tls
         hosts:
