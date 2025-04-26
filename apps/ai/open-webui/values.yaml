@@ -1,0 +1,20 @@
+ollama:
+  enabled: false
+
+ingress:
+  enabled: true
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-cloudflare
+    external-dns.alpha.kubernetes.io/internal-hostname: chat.sievert.fun
+  hosts:
+  - host: chat.sievert.fun
+    paths:
+      - path: /
+        pathType: Prefix
+  tls:
+    - secretName: chat-tls
+      hosts:
+        - chat.sievert.fun
+persistence:
+  enabled: true
+  storageClass: khal-drogo-nfs

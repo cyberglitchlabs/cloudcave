@@ -14,7 +14,7 @@ ingress:
   enabled: true
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt-cloudflare
-    external-dns.alpha.kubernetes.io/internal-hostname: bambu.sievert.fun
+    external-dns.alpha.kubernetes.io/internal-hostname: ollama.sievert.fun
   hosts:
   - host: ollama.sievert.fun
     paths:

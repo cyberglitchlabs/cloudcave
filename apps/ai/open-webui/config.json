@@ -1,0 +1,11 @@
+{
+  "appName": "open-webui",
+  "userGivenName": "open-webui",
+  "destNamespace": "open-webui",
+  "destServer": "https://kubernetes.default.svc",
+  "srcPath": "apps/ai/open-webui",
+  "srcRepoURL": "https://github.com/cyberglitchlabs/cloudcave.git",
+  "srcTargetRevision": "",
+  "labels": null,
+  "annotations": null
+}
