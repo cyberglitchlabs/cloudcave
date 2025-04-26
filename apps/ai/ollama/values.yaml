@@ -8,6 +8,7 @@ ollama:
     
     # -- Specify the number of GPU to 1
     number: 1
+runtimeClassName: nvidia
 
 ingress:
   enabled: true
