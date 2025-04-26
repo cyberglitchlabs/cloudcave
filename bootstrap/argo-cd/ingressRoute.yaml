@@ -29,3 +29,5 @@ spec:
     certResolver: letsencrypt
     domains:
       - main: argocd.sievert.fun
+        sans:
+          - www.argocd.sievert.fun
