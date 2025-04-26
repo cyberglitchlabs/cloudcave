@@ -1,0 +1,11 @@
+{
+  "appName": "ollama",
+  "userGivenName": "ollama",
+  "destNamespace": "ollama",
+  "destServer": "https://kubernetes.default.svc",
+  "srcPath": "apps/ai/ollama",
+  "srcRepoURL": "https://github.com/cyberglitchlabs/cloudcave.git",
+  "srcTargetRevision": "",
+  "labels": null,
+  "annotations": null
+}

@@ -1,0 +1,25 @@
+ollama:
+  gpu:
+    # -- Enable GPU integration
+    enabled: true
+    
+    # -- GPU type: 'nvidia' or 'amd'
+    type: 'nvidia'
+    
+    # -- Specify the number of GPU to 1
+    number: 1
+
+ingress:
+  enabled: true
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-cloudflare
+    external-dns.alpha.kubernetes.io/internal-hostname: bambu.sievert.fun
+  hosts:
+  - host: ollama.sievert.fun
+    paths:
+      - path: /
+        pathType: Prefix
+  tls:
+    - secretName: ollama-tls
+      hosts:
+        - ollama.sievert.fun
