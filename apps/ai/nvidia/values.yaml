@@ -1,2 +1,4 @@
 allowDefaultNamespace: true
 runtimeClassName: nvidia
+gfd:
+  enabled: true
