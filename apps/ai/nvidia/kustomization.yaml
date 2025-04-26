@@ -4,4 +4,4 @@ kind: Kustomization
 generators:
 - helmChart.yaml
 
-namespace: ollama
+namespace: nvidia
