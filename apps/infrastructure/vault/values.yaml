@@ -92,8 +92,12 @@ server:
       value: "root"
     - name: VAULT_DEV_LISTEN_ADDRESS
       value: "0.0.0.0:8200"
+    - name: VAULT_SECRET_KEY
+      valueFrom:
+        secretKeyRef:
+          name: vault-secret
+          key: secret-key
 
-  # Configure Vault server initialization
   extraInitContainers:
     - name: vault-init
       image: vault:1.16.1
@@ -105,3 +109,7 @@ server:
       volumeMounts:
         - name: vault-data
           mountPath: /vault/data
+
+  volumes:
+    - name: vault-data
+      emptyDir: {}
