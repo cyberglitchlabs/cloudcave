@@ -1,0 +1,11 @@
+{
+  "appName": "huntarr-media",
+  "userGivenName": "huntarr",
+  "destNamespace": "huntarr",
+  "destServer": "https://kubernetes.default.svc",
+  "srcPath": "apps/media/huntarr",
+  "srcRepoURL": "https://github.com/cyberglitchlabs/cloudcave.git",
+  "srcTargetRevision": "",
+  "labels": null,
+  "annotations": null
+}
