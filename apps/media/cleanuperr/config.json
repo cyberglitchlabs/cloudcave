@@ -1,0 +1,11 @@
+{
+  "appName": "cleanuperr-media",
+  "userGivenName": "cleanuperr",
+  "destNamespace": "cleanuperr",
+  "destServer": "https://kubernetes.default.svc",
+  "srcPath": "apps/media/cleanuperr",
+  "srcRepoURL": "https://github.com/cyberglitchlabs/cloudcave.git",
+  "srcTargetRevision": "",
+  "labels": null,
+  "annotations": null
+}

@@ -1,0 +1,73 @@
+controllers:
+  cleanuperr:
+    strategy: Recreate
+    containers:
+      app:
+        image:
+          repository: ghcr.io/roxedus/cleanuperr
+          tag: latest
+          pullPolicy: IfNotPresent
+        env:
+          TZ: "America/Chicago"
+service:
+  app:
+    controller: cleanuperr
+    ports:
+      http:
+        port: 5000
+
+ingress:
+  app:
+    className: traefik
+    annotations:
+      cert-manager.io/cluster-issuer: letsencrypt-cloudflare
+      external-dns.alpha.kubernetes.io/internal-hostname: cleanuperr.sievert.fun
+    hosts:
+    - host: cleanuperr.sievert.fun
+      paths:
+      - path: /
+        pathType: Prefix
+        service:
+          identifier: app
+          port: http
+    tls:
+    - secretName: cleanuperr-tls
+      hosts:
+      - cleanuperr.sievert.fun
+
+podSecurityContext:
+  runAsUser: 65534
+  runAsGroup: 65534
+  fsGroup: 65534
+  fsGroupChangePolicy: OnRootMismatch
+
+persistence:
+  config:
+    enabled: true
+    type: persistentVolumeClaim
+    accessMode: ReadWriteOnce
+    storageClass: local-path
+    size: 1Gi
+    globalMounts:
+    - path: /config
+  media:
+    enabled: false
+    type: persistentVolumeClaim
+    existingClaim: smb-huntarr # This was smb-huntarr, will be smb-cleanuperr in kustomization
+files:
+  config.yaml:
+    enabled: true
+    content: |
+      # Cleanuperr config.yaml placeholder
+      # Refer to Cleanuperr documentation to configure connections to Sonarr, Radarr, etc.
+      # Example structure (verify with actual Cleanuperr docs):
+      # general:
+      #   timezone: "America/Chicago" # Should match TZ env
+      # sonarr:
+      #   - name: Sonarr Instance
+      #     url: http://sonarr.sonarr.svc.cluster.local:8989 # Or your Sonarr URL
+      #     apiKey: YOUR_SONARR_API_KEY
+      # radarr:
+      #   - name: Radarr Instance
+      #     url: http://radarr.radarr.svc.cluster.local:7878 # Or your Radarr URL
+      #     apiKey: YOUR_RADARR_API_KEY
