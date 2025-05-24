@@ -1,0 +1,122 @@
+[
+  {
+    "filePath": "apps/3d/bambu/values.yaml",
+    "imageName": "lscr.io/linuxserver/bambustudio",
+    "currentVersion": "02.00.02",
+    "newVersion": "2.0.3",
+    "updateNeeded": true,
+    "reason": "Rule pattern '['^lscr.io/linuxserver/manyfoldstudio$', '^lscr.io/linuxserver/bambustudio$']' matched. Allowed versions: '02.00.x' (parsed as '<2.1.0,>=2.0.0'). Latest satisfying version is 2.0.3."
+  },
+  {
+    "filePath": "apps/3d/manyfold/values.yaml",
+    "imageName": "lscr.io/linuxserver/manyfoldstudio",
+    "currentVersion": "02.00.02",
+    "newVersion": "Error: Could not fetch tags",
+    "updateNeeded": false,
+    "reason": "Failed to fetch tags for lscr.io/linuxserver/manyfoldstudio."
+  },
+  {
+    "filePath": "apps/3d/manyfold/values.yaml",
+    "imageName": "postgres",
+    "currentVersion": "16.2",
+    "newVersion": "16.9",
+    "updateNeeded": true,
+    "reason": "Rule pattern '['^postgres$']' matched. Allowed versions: '16.x' (parsed as '<17.0.0,>=16.0.0'). Latest satisfying version is 16.9."
+  },
+  {
+    "filePath": "apps/3d/manyfold/values.yaml",
+    "imageName": "redis",
+    "currentVersion": "7.2",
+    "newVersion": "7.4.3",
+    "updateNeeded": true,
+    "reason": "Rule pattern '['^redis$']' matched. Allowed versions: '7.x' (parsed as '<8.0.0,>=7.0.0'). Latest satisfying version is 7.4.3."
+  },
+  {
+    "filePath": "apps/infrastructure/vault/values.yaml",
+    "imageName": "vault",
+    "currentVersion": "1.16.1",
+    "newVersion": "1.16.1",
+    "updateNeeded": false,
+    "reason": "Already at or above the latest satisfying version (1.13.3)."
+  },
+  {
+    "filePath": "apps/media/audiobooks/values.yaml",
+    "imageName": "ghcr.io/advplyr/audiobookshelf",
+    "currentVersion": "2.20.0",
+    "newVersion": "2.23.0",
+    "updateNeeded": true,
+    "reason": "Rule pattern '['^ghcr.io/advplyr/audiobookshelf$']' matched. Allowed versions: '2.x' (parsed as '<3.0.0,>=2.0.0'). Latest satisfying version is 2.23.0."
+  },
+  {
+    "filePath": "apps/media/lidarr/values.yaml",
+    "imageName": "ghcr.io/home-operations/lidarr",
+    "currentVersion": "2.10.1.4589",
+    "newVersion": "2.12.0.4633",
+    "updateNeeded": true,
+    "reason": "Latest satisfying version is 2.12.0.4633."
+  },
+  {
+    "filePath": "apps/media/notifiarr/values.yaml",
+    "imageName": "golift/notifiarr",
+    "currentVersion": "0.8.3",
+    "newVersion": "0.8.3",
+    "updateNeeded": false,
+    "reason": "Already at or above the latest satisfying version (0.8.3)."
+  },
+  {
+    "filePath": "apps/media/profilarr/values.yaml",
+    "imageName": "santiagosayshey/profilarr",
+    "currentVersion": "v1.0.1",
+    "newVersion": "v1.0.1",
+    "updateNeeded": false,
+    "reason": "Already at or above the latest satisfying version (1.0.1)."
+  },
+  {
+    "filePath": "apps/media/prowlarr/values.yaml",
+    "imageName": "ghcr.io/home-operations/prowlarr",
+    "currentVersion": "1.32.2.4987",
+    "newVersion": "1.36.2.5059",
+    "updateNeeded": true,
+    "reason": "Latest satisfying version is 1.36.2.5059."
+  },
+  {
+    "filePath": "apps/media/radarr/values.yaml",
+    "imageName": "ghcr.io/home-operations/radarr",
+    "currentVersion": "5.20.2.9777",
+    "newVersion": "5.23.3.9987",
+    "updateNeeded": true,
+    "reason": "Latest satisfying version is 5.23.3.9987."
+  },
+  {
+    "filePath": "apps/media/readarr/values.yaml",
+    "imageName": "ghcr.io/home-operations/readarr",
+    "currentVersion": "0.4.12.2753",
+    "newVersion": "0.4.16.2793",
+    "updateNeeded": true,
+    "reason": "Latest satisfying version is 0.4.16.2793."
+  },
+  {
+    "filePath": "apps/media/sabnzbd/values.yaml",
+    "imageName": "ghcr.io/home-operations/sabnzbd",
+    "currentVersion": "4.4.1",
+    "newVersion": "4.5.1",
+    "updateNeeded": true,
+    "reason": "Latest satisfying version is 4.5.1."
+  },
+  {
+    "filePath": "apps/media/sonarr/values.yaml",
+    "imageName": "ghcr.io/home-operations/sonarr",
+    "currentVersion": "4.0.14.2938",
+    "newVersion": "4.0.14.2938",
+    "updateNeeded": false,
+    "reason": "Already at or above the latest satisfying version (4.0.14.2938)."
+  },
+  {
+    "filePath": "apps/tools/it-tools/values.yaml",
+    "imageName": "corentinth/it-tools",
+    "currentVersion": "2024.10.22-7ca5933",
+    "newVersion": "2024.10.22-7ca5933",
+    "updateNeeded": false,
+    "reason": "No suitable version found in registry matching constraints."
+  }
+]

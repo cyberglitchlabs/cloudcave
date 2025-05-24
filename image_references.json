@@ -1,0 +1,77 @@
+[
+  {
+    "file_path": "apps/3d/bambu/values.yaml",
+    "image_name": "lscr.io/linuxserver/bambustudio",
+    "image_tag": "02.00.02"
+  },
+  {
+    "file_path": "apps/3d/manyfold/values.yaml",
+    "image_name": "lscr.io/linuxserver/manyfoldstudio",
+    "image_tag": "02.00.02"
+  },
+  {
+    "file_path": "apps/3d/manyfold/values.yaml",
+    "image_name": "postgres",
+    "image_tag": "16.2"
+  },
+  {
+    "file_path": "apps/3d/manyfold/values.yaml",
+    "image_name": "redis",
+    "image_tag": "7.2"
+  },
+  {
+    "file_path": "apps/infrastructure/vault/values.yaml",
+    "image_name": "vault",
+    "image_tag": "1.16.1"
+  },
+  {
+    "file_path": "apps/media/audiobooks/values.yaml",
+    "image_name": "ghcr.io/advplyr/audiobookshelf",
+    "image_tag": "2.20.0"
+  },
+  {
+    "file_path": "apps/media/lidarr/values.yaml",
+    "image_name": "ghcr.io/home-operations/lidarr",
+    "image_tag": "2.10.1.4589"
+  },
+  {
+    "file_path": "apps/media/notifiarr/values.yaml",
+    "image_name": "golift/notifiarr",
+    "image_tag": "0.8.3"
+  },
+  {
+    "file_path": "apps/media/profilarr/values.yaml",
+    "image_name": "santiagosayshey/profilarr",
+    "image_tag": "v1.0.1"
+  },
+  {
+    "file_path": "apps/media/prowlarr/values.yaml",
+    "image_name": "ghcr.io/home-operations/prowlarr",
+    "image_tag": "1.32.2.4987"
+  },
+  {
+    "file_path": "apps/media/radarr/values.yaml",
+    "image_name": "ghcr.io/home-operations/radarr",
+    "image_tag": "5.20.2.9777"
+  },
+  {
+    "file_path": "apps/media/readarr/values.yaml",
+    "image_name": "ghcr.io/home-operations/readarr",
+    "image_tag": "0.4.12.2753"
+  },
+  {
+    "file_path": "apps/media/sabnzbd/values.yaml",
+    "image_name": "ghcr.io/home-operations/sabnzbd",
+    "image_tag": "4.4.1"
+  },
+  {
+    "file_path": "apps/media/sonarr/values.yaml",
+    "image_name": "ghcr.io/home-operations/sonarr",
+    "image_tag": "4.0.14.2938"
+  },
+  {
+    "file_path": "apps/tools/it-tools/values.yaml",
+    "image_name": "corentinth/it-tools",
+    "image_tag": "2024.10.22-7ca5933"
+  }
+]
