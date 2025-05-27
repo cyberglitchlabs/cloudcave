@@ -5,7 +5,7 @@ controllers:
       app:
         image:
           repository: lscr.io/linuxserver/bambustudio
-          tag: 2.0.3
+          tag: V02.00.03.54-ls88
           pullPolicy: IfNotPresent
         env:
           TZ: "America/Chicago"
