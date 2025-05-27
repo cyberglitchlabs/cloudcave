@@ -4,8 +4,8 @@ controllers:
     containers:
       app:
         image:
-          repository: hotio/huntarr
-          tag: release
+          repository: ghcr.io/plexguide/huntarr
+          tag: latest
           pullPolicy: IfNotPresent
         env:
           TZ: "America/Chicago"
