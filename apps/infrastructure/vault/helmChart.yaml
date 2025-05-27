@@ -3,7 +3,7 @@ kind: HelmChartInflationGenerator
 metadata:
   name: vault
 name: vault
-version: 0.27.0
+version: 0.30.0
 namespace: vault
 releaseName: vault
 repo: https://helm.releases.hashicorp.com
