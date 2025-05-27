@@ -5,7 +5,7 @@ controllers:
       app:
         image:
           repository: lscr.io/linuxserver/manyfoldstudio
-          tag: V0.111.2-ls81
+          tag: v0.111.2-ls81
           pullPolicy: IfNotPresent
         env:
           TZ: "America/Chicago"
