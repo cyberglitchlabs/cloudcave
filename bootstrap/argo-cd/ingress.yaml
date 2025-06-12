@@ -38,6 +38,10 @@ metadata:
     traefik.ingress.kubernetes.io/router.entrypoints: websecure
     traefik.ingress.kubernetes.io/router.middlewares: default-redirect-https@kubernetescrd
     traefik.ingress.kubernetes.io/router.priority: "20"
+    traefik.ingress.kubernetes.io/service.scheme: h2c
+    traefik.ingress.kubernetes.io/router.tls: "true"
+    traefik.ingress.kubernetes.io/router.headers.customrequestheaders.Content-Type: application/grpc
+    traefik.ingress.kubernetes.io/router.headers.contenttypeheader: application/grpc
 spec:
   ingressClassName: traefik
   rules:
