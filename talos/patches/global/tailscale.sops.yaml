@@ -1,0 +1,20 @@
+apiVersion: v1alpha1
+kind: ExtensionServiceConfig
+name: tailscale
+environment:
+  - ENC[AES256_GCM,data:uCAWb1GWKyC4R6rJbNVWTmaPE0/LoZp6NunObOP5U9bVkBwQMj+EY6BKIY6juiMq1trKBbXvziry1M4FfL0dRtjGfIo5IHv+,iv:oWNE5DeujrR7okAUJ2Tznw0aCDvvs5vHeRl0ACuAo/o=,tag:+w9YSkL3tNkkoZEpjBaU4g==,type:str]
+sops:
+  age:
+    - recipient: age1jj9jc77qz0jg9s7cl9s7a34mnkkn6wqgh3zvlneggnvdrx5gdu7q9msghy
+      enc: |
+        -----BEGIN AGE ENCRYPTED FILE-----
+        YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBsbjZIZ2R3UHVmZTZ0cklo
+        QjRpc1p1cGZHNExONTVNWkdkcFJ5aWVQOFZBClFqazFneUh2czFxc1Z0dVZXY1BF
+        d0tjUjhKY2NRWXlITTI4MmtqdUNUa1UKLS0tIHMvNi9ab2JEV0FFc3hCdnhwUE4w
+        Q05rVHNKY1B6TTIwQzUyTTBCckFwMk0KQyE5GsqqKyV/gvTDGPIl51FPUtx0qqcd
+        37xvsGaJYnu341upuvvap6shlqdTAmpBegEt8izH4hDBFmy25/vBhQ==
+        -----END AGE ENCRYPTED FILE-----
+  lastmodified: "2025-09-27T21:07:02Z"
+  mac: ENC[AES256_GCM,data:qUU6NCjvrgBMnEGeZl2zNjsryECtxQKJPk1gElq0nxFmQwawGF0Np1KlEXpws4Ztmodspl9RvdBKWaeHz0v5fiWa9iJ8WUL9WlUdTFc2gALfH/AqEnCuOl0XyON5g38UuScfLALa+66G+Fnot/P7GDX3PwReSpdPww335GVSgpI=,iv:fMND8C3WGmj7AZ+pqXVXTYYJ86Fu5IPyKK4Q1YYflsY=,tag:40xpeNsty91KJV54xKRNvg==,type:str]
+  encrypted_regex: ^(environment)$
+  version: 3.10.2
