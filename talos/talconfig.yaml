@@ -24,7 +24,8 @@ nodes:
     installDisk: "/dev/sdb"
     machineSpec:
       secureboot: false
-    talosImageURL: factory.talos.dev/installer/87febee00655db97caaa11a35c2544908122c0085e789451755e73140dddaa6b
+    #talosImageURL: factory.talos.dev/installer/8f978bbd93627852c41baa0c58804b6f871319f6700024d0de471b7b384863ad
+    talosImageURL: factory.talos.dev/installer/8f978bbd93627852c41baa0c58804b6f871319f6700024d0de471b7b384863ad
     controlPlane: true
     networkInterfaces:
       - deviceSelector:
@@ -38,6 +39,18 @@ nodes:
         mtu: 1500
         vip:
           ip: "192.168.42.10"
+    # schematic:
+    #   customization:
+    #     systemExtensions:
+    #       officialExtensions:
+    #         - siderolabs/amd-ucode
+    #         - siderolabs/iscsi-tools
+    #         - siderolabs/nonfree-kmod-nvidia-production
+    #         - siderolabs/nvidia-container-toolkit-production
+    #         - siderolabs/tailscale
+    #         - siderolabs/intel-ucode
+    patches:
+      - "@./patches/tuf1/nvidia.yaml"
 
 # Global patches
 patches:
